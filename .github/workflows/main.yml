@@ -114,10 +114,10 @@ jobs:
               title: 'This month'
               color: '{{ userdata.color_func(value) }}'
           - title: 'Issue comments'
-            description: 'Total issues the received comments each month'
+            description: 'Total issues that received comments each month'
             widgets:
             - type: number
-              issue_query: 'project:Catalyst-Circle/Catalyst-Prioritized-Problems/3 is:open is:issue comments:>0 updated:{{ date("-60 days")..date("-30 days") }}'
+              issue_query: 'project:Catalyst-Circle/Catalyst-Prioritized-Problems/3 is:open is:issue comments:>0 updated:{{ date("-60 days".."-30 days") }}'
               title: 'Last month'
               color: '{{ userdata.color_func(value) }}'
             - type: number
