@@ -52,7 +52,7 @@ jobs:
               color: 'red'
             - type: number
               issue_query: 'project:Catalyst-Circle/Catalyst-Prioritized-Problems/3 is:issue closed:<{{ date("-0 days") }}'
-              title: 'Closed issues this month'
+              title: 'Closed issues'
               color: 'green'
           - title: 'Circles'
             description: 'Issues per group per month (Some issues involve more than one group)'
@@ -117,7 +117,7 @@ jobs:
             description: 'Total issue comments each month'
             widgets:
             - type: number
-              issue_query: 'project:Catalyst-Circle/Catalyst-Prioritized-Problems/3 is:open is:issue comments:>0 updated:>{{ date("-60 days") }}'
+              issue_query: 'project:Catalyst-Circle/Catalyst-Prioritized-Problems/3 is:open is:issue comments:>0 updated:{{ date("-60 days")..date("-30 days") }}'
               title: 'Last month'
               color: '{{ userdata.color_func(value) }}'
             - type: number
