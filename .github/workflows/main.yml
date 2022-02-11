@@ -82,7 +82,7 @@ jobs:
               title: 'Problem Backlog'
               color: 'blue'
             - type: number
-              issue_query: 'project:Catalyst-Circle/Catalyst-Prioritized-Problems/3 label:'Raw Problems (Researching)' is:issue created:>{{ date("-30 days") }}'
+              issue_query: 'project:Catalyst-Circle/Catalyst-Prioritized-Problems/3 column:15358605 label:"Raw Problems (Researching)" is:issue created:>{{ date("-30 days") }}'
               title: 'Raw Problems (Researching)'
               color: 'red'
             - type: number
