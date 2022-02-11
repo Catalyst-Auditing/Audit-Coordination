@@ -77,7 +77,7 @@ jobs:
               title: 'This month'
               color: 'blue'
           - title: 'Circles'
-            description: 'Issues per group per month (Some issues involve more than one group)'
+            description: 'Issues per group (Some issues involve more than one group)'
             widgets:
             - type: graph
               title: 'Circle groups'
