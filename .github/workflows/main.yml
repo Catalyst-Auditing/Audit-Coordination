@@ -36,10 +36,6 @@ jobs:
             description: 'Current state of Issues'
             widgets:
             - type: number
-              issue_query: 'project:Catalyst-Circle/Catalyst-Prioritized-Problems/3 is:issue created:>{{ date("-1000 days") }}'
-              title: 'Total opened issues'
-              color: 'blue'
-            - type: number
               issue_query: 'project:Catalyst-Circle/Catalyst-Prioritized-Problems/3 is:issue created:>{{ date("-30 days") }}'
               title: 'Opened issues this month'
               color: 'red'
@@ -48,7 +44,7 @@ jobs:
               title: 'Closed issues this month'
               color: 'green'
           - title: 'Circles'
-            description: 'Issues per group (Some issues involve more than one group)'
+            description: 'Issues per group per month (Some issues involve more than one group)'
             widgets:
             - type: graph
               title: 'Circle groups'
@@ -56,8 +52,14 @@ jobs:
               - title: 'General ADA Holders'
                 issue_query: 'project:Catalyst-Circle/Catalyst-Prioritized-Problems/3 is:open is:issue label:"General Voters" created:>{{ date("-1000 days") }}'
                 color: '{{ userdata.color_func(value) }}'
+              - title: 'General ADA Holders (Last month)'
+                issue_query: 'project:Catalyst-Circle/Catalyst-Prioritized-Problems/3 is:open is:issue label:"General Voters" created:<{{ date("-30 days") }}'
+                color: '{{ userdata.color_func(value) }}'
               - title: 'Community Advisors'
                 issue_query: 'project:Catalyst-Circle/Catalyst-Prioritized-Problems/3 is:open is:issue label:"Community Advisor" created:>{{ date("-1000 days") }}'
+                color: '{{ userdata.color_func(value) }}'
+              - title: 'Community Advisors'
+                issue_query: 'project:Catalyst-Circle/Catalyst-Prioritized-Problems/3 is:open is:issue label:"Community Advisor" created:<{{ date("-30 days") }}'
                 color: '{{ userdata.color_func(value) }}'
               - title: 'Funded Proposers'
                 issue_query: 'project:Catalyst-Circle/Catalyst-Prioritized-Problems/3 is:open is:issue label:"Funded Proposers" created:>{{ date("-1000 days") }}'
