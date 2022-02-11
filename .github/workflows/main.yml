@@ -60,22 +60,22 @@ jobs:
             - type: number
               issue_query: 'project:Catalyst-Circle/Catalyst-Prioritized-Problems/3 is:open is:issue updated:>{{ date("-60 days") }} updated:<{{ date("-30 days") }}'
               title: 'Last month'
-              color: '{{ userdata.color_func(value) }}'
+              color: 'yellow'
             - type: number
               issue_query: 'project:Catalyst-Circle/Catalyst-Prioritized-Problems/3 is:open is:issue updated:>{{ date("-30 days") }}'
               title: 'This month'
-              color: '{{ userdata.color_func(value) }}'
+              color: 'blue'
           - title: 'Issue comments'
             description: 'Total issues that received comments each month'
             widgets:
             - type: number
               issue_query: 'project:Catalyst-Circle/Catalyst-Prioritized-Problems/3 is:open is:issue comments:>0 updated:>{{ date("-60 days") }} updated:<{{ date("-30 days") }}'
               title: 'Last month'
-              color: '{{ userdata.color_func(value) }}'
+              color: 'yellow'
             - type: number
               issue_query: 'project:Catalyst-Circle/Catalyst-Prioritized-Problems/3 is:open is:issue comments:>0 updated:>{{ date("-30 days") }}'
               title: 'This month'
-              color: '{{ userdata.color_func(value) }}'
+              color: 'blue'
           - title: 'Circles'
             description: 'Issues per group per month (Some issues involve more than one group)'
             widgets:
