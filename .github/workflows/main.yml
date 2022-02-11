@@ -36,19 +36,9 @@ jobs:
             description: 'Current state of Issues'
             widgets:
             - type: number
-              script: |
-                const owner = Catalyst-Circle
-                const repo = Catalyst-Prioritized-Problems
-                const issue_number = 69
-                const results = await github.issues.listEventsForTimeline({
-                  owner,
-                  repo,
-                  issue_number,
-                });
-                const count = results.data.total_count
-                const title = 'Total events'
-                const color = (count > 10) ? 'red' : 'green'
-                return { value: count, title: title, color: color }
+              issue_query: 'project:Catalyst-Circle/Catalyst-Prioritized-Problems/3 is:issue created:>{{ date("-1000 days") }}'
+              title: 'Total opened issues'
+              color: 'blue'
             - type: number
               issue_query: 'project:Catalyst-Circle/Catalyst-Prioritized-Problems/3 is:issue created:>{{ date("-30 days") }}'
               title: 'Opened issues this month'
