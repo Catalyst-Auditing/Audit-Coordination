@@ -74,49 +74,17 @@ jobs:
               - title: 'Cardano Foundation'
                 issue_query: 'project:Catalyst-Circle/Catalyst-Prioritized-Problems/3 is:open is:issue label:"CF" created:>{{ date("-1000 days") }}'
                 color: '{{ userdata.color_func(value) }}'
-          - title: 'Kanban Board Status'
-            description: 'Current state of Kanban board'
+          - title: 'Updated Issues'
+            description: 'Total issues that got updated each month'
             widgets:
             - type: number
-              issue_query: 'project:Catalyst-Circle/Catalyst-Prioritized-Problems/3 "Problem Backlog" is:open is:issue created:>{{ date("-1000 days") }}'
-              title: 'Problem Backlog'
-              color: 'red'
+              issue_query: 'project:Catalyst-Circle/Catalyst-Prioritized-Problems/3 is:open is:issue updated:>{{ date("-60 days") }}'
+              title: 'Last month'
+              color: '{{ userdata.color_func(value) }}'
             - type: number
-              issue_query: 'project:Catalyst-Circle/Catalyst-Prioritized-Problems/3 "Raw Problems (Researching)" is:issue created:>{{ date("-1000 days") }}'
-              title: 'Raw Problems (Researching)'
-              color: 'blue'
-            - type: number
-              issue_query: 'project:Catalyst-Circle/Catalyst-Prioritized-Problems/3 "Well-Defined Problems (Ready)" is:issue created:>{{ date("-1000 days") }}'
-              title: 'Well-Defined Problems (Ready)'
-              color: 'yellow'
-            - type: number
-              issue_query: 'project:Catalyst-Circle/Catalyst-Prioritized-Problems/3 "Shared with Community (Input)" is:issue closed:>{{ date("-30 days") }}'
-              title: 'Shared with Community (Input)'
-              color: 'yellow'
-            - type: number
-              issue_query: 'project:Catalyst-Circle/Catalyst-Prioritized-Problems/3 "Picked-Up (Ready)" is:issue closed:>{{ date("-30 days") }}'
-              title: 'Picked-Up (Ready)'
-              color: 'green'
-            - type: number
-              issue_query: 'project:Catalyst-Circle/Catalyst-Prioritized-Problems/3 "Prototyping (In Progress)" is:issue closed:>{{ date("-30 days") }}'
-              title: 'Prototyping (In Progress)'
-              color: 'green'
-            - type: number
-              issue_query: 'project:Catalyst-Circle/Catalyst-Prioritized-Problems/3 "Validation (Reporting)" is:issue closed:>{{ date("-30 days") }}'
-              title: 'Validation (Reporting)'
-              color: 'green'
-            - type: number
-              issue_query: 'project:Catalyst-Circle/Catalyst-Prioritized-Problems/3 "Integrated (Accepted)" is:issue closed:>{{ date("-30 days") }}'
-              title: 'Integrated (Accepted)'
-              color: 'green'
-            - type: number
-              issue_query: 'project:Catalyst-Circle/Catalyst-Prioritized-Problems/3 "Rejected (Canceled)" is:issue closed:>{{ date("-30 days") }}'
-              title: 'Rejected (Canceled)'
-              color: 'red'
-            - type: number
-              issue_query: 'project:Catalyst-Circle/Catalyst-Prioritized-Problems/3 "Circle reset (Sign-Off)" is:issue closed:>{{ date("-30 days") }}'
-              title: 'Circle reset (Sign-Off)'
-              color: 'green'
+              issue_query: 'project:Catalyst-Circle/Catalyst-Prioritized-Problems/3 is:open is:issue updated:>{{ date("-30 days") }}'
+              title: 'This month'
+              color: '{{ userdata.color_func(value) }}'
           - title: 'Issues'
             widgets:
             - type: 'table'
