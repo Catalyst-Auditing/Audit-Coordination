@@ -128,7 +128,7 @@ jobs:
             widgets:
             - type: 'table'
               title: 'General ADA Holders Comments'
-              issue_query: 'project:Catalyst-Circle/Catalyst-Prioritized-Problems/3 is:issue label:"Community Advisor" created:<{{ date("-0 days") }} sort:created-asc'
+              issue_query: 'project:Catalyst-Circle/Catalyst-Prioritized-Problems/3 is:issue is:open label:"Community Advisor" created:<{{ date("-0 days") }} updated:>{{ date("-30 days") }} sort:created-asc'
               fields:
               - title: 'Title'
                 property: title
