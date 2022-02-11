@@ -32,7 +32,7 @@ jobs:
             }
             userdata.num = 0
           sections:
-          - title: 'Status'
+          - title: 'Current Status'
             description: 'Current state of Issues'
             widgets:
             - type: number
