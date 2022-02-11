@@ -84,7 +84,7 @@ jobs:
             - type: number
               issue_query: 'project:Catalyst-Circle/Catalyst-Prioritized-Problems/3 "Raw Problems (Researching)" is:issue created:>{{ date("-1000 days") }}'
               title: 'Raw Problems (Researching)'
-              color: 'red'
+              color: 'blue'
             - type: number
               issue_query: 'project:Catalyst-Circle/Catalyst-Prioritized-Problems/3 "Well-Defined Problems (Ready)" is:issue created:>{{ date("-1000 days") }}'
               title: 'Well-Defined Problems (Ready)'
