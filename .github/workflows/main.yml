@@ -103,7 +103,7 @@ jobs:
                 issue_query: 'project:Catalyst-Circle/Catalyst-Prioritized-Problems/3 is:open is:issue label:"CF" created:<{{ date("-30 days") }}'
                 color: 'blue'
           - title: 'Updated Issues'
-            description: 'Total issues that got updated each month'
+            description: 'Total issues that received updates each month'
             widgets:
             - type: number
               issue_query: 'project:Catalyst-Circle/Catalyst-Prioritized-Problems/3 is:open is:issue updated:>{{ date("-60 days") }}'
@@ -114,7 +114,7 @@ jobs:
               title: 'This month'
               color: '{{ userdata.color_func(value) }}'
           - title: 'Issue comments'
-            description: 'Total issue comments each month'
+            description: 'Total issues the received comments each month'
             widgets:
             - type: number
               issue_query: 'project:Catalyst-Circle/Catalyst-Prioritized-Problems/3 is:open is:issue comments:>0 updated:{{ date("-60 days")..date("-30 days") }}'
